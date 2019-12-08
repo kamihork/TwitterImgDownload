@@ -29,9 +29,10 @@ class imageDownloader(object):
 
     def run(self):
         """実行
-            1. キーワードの数だけtweetページを検索
-            2. 読み込むページ数に対して、ページごとに返されるツイートの数で絞り込む
-            3. キーワードを含む画像のURLがあればダウンロード
+            1. twitterページを指定数取得
+            2. ページ内のツイートのうち、キーワードがあるtweetのみ取得
+            3. 画像URLを取得
+            4. ダウンロード実行
         """
         self.max_id = None # ページを跨ぐ検索対象IDの初期化
         for page in range(SEARCH_PAGES_NUMBER):
